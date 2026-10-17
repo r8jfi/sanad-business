@@ -8,7 +8,7 @@
 
 نظام شركتك الذكي: البريد والموافقات والفريق والأرقام في مكان واحد، وسند يساعدك فيها بلهجتك، بالكتابة أو بالصوت.
 
-[**Try the live demo**](#try-it) · [Features](#what-it-does) · [How it works](#how-its-built) · [Security](#security)
+[**Try the live demo**](https://calm-field-7452sanad-business.re4679607.workers.dev) · [Features](#what-it-does) · [How it works](#how-its-built) · [Security](#security)
 
 </div>
 
@@ -24,7 +24,7 @@ Sanad Business plugs into the company as **one system**, not another separate ap
 
 ## Try it
 
-> **Live demo:** _link coming soon_
+> **Live demo:** [https://calm-field-7452sanad-business.re4679607.workers.dev](https://calm-field-7452sanad-business.re4679607.workers.dev)
 >
 > No sign-up. Pick a role (company manager, employee, or café owner) and you get a private sandbox company with realistic data. It deletes itself after 24 hours.
 
