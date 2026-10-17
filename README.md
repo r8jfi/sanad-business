@@ -1,0 +1,104 @@
+<div align="center">
+
+<img src="assets/logo.png" width="96" alt="Sanad logo">
+
+# Sanad Business
+
+**The smart workplace system for Saudi companies: mail, approvals, people and numbers in one place, with an assistant that speaks your dialect.**
+
+نظام شركتك الذكي: البريد والموافقات والفريق والأرقام في مكان واحد، وسند يساعدك فيها بلهجتك، بالكتابة أو بالصوت.
+
+[**Try the live demo**](#try-it) · [Features](#what-it-does) · [How it works](#how-its-built) · [Security](#security)
+
+</div>
+
+<p align="center"><img src="assets/hero.png" alt="Sanad Business: manager dashboard and employee phone view"></p>
+
+---
+
+## Why I built it
+
+Most companies here run on a patchwork: email in Outlook, leave requests on paper or WhatsApp, attendance in one tool, sales in a spreadsheet. The manager ends up chasing people for updates and nobody knows where a request is stuck.
+
+Sanad Business plugs into the company as **one system**, not another separate app. Every page has an owner, every request has a clear path, and Sanad (the assistant) keeps an eye on the work and tells the manager what needs attention, in Saudi Arabic.
+
+## Try it
+
+> **Live demo:** _link coming soon_
+>
+> No sign-up. Pick a role (company manager, employee, or café owner) and you get a private sandbox company with realistic data. It deletes itself after 24 hours.
+
+## What it does
+
+### For the manager
+- **One home screen** with today's revenue, attendance, pending approvals, unread mail and meetings.
+- **"Sanad notices"**: a live list of what needs you: late tasks, low stock, stuck requests, pages whose owner hasn't updated them.
+- **Auto mode vs "I'm here"**: let Sanad follow up with staff on your behalf, or switch it off and handle things yourself.
+
+<p align="center"><img src="assets/screens/kpi.png" width="49%" alt="KPIs"> <img src="assets/screens/responsibilities.png" width="49%" alt="Page owners"></p>
+
+### Mail that works with what you already have
+- Connect **Outlook (Microsoft 365)** or **Gmail**, or use a company address hosted by Sanad.
+- Shared company inbox for the manager and whoever owns the mail page.
+- Sanad can summarise a thread, suggest a reply, or polish your wording, **only when you ask**. People still write and send their own mail.
+
+<p align="center"><img src="assets/screens/mail.png" alt="Mail"></p>
+
+### Requests and approvals
+- Leave, salary letters, advances, expenses, IT requests, each with its own approval chain: department head → HR or IT → finance for money.
+- Before each decision Sanad shows the facts: leave balance, who else is off and team coverage, meetings the person would miss, and working days (Sunday to Thursday).
+- Employment letters generated automatically once approved.
+
+<p align="center"><img src="assets/screens/approval.png" alt="Approval chain"></p>
+
+### People and structure
+- Departments with heads, job titles, personal sign-in codes or company SSO (Microsoft / Google).
+- Attendance with a grace period, announcements with read receipts, a shared calendar, and a documents & policies library.
+- **Every page has an owner.** Sanad tracks whether each owner keeps their page up to date and reports to the manager.
+
+<p align="center"><img src="assets/screens/attendance.png" width="49%" alt="Attendance"> <img src="assets/screens/calendar.png" width="49%" alt="Calendar"></p>
+
+### Performance and customers
+- Per-employee KPIs: sales target progress, revenue collected, profit margin.
+- Customer ratings through a simple public link, plus repeat-customer tracking.
+
+### For employees
+Each employee sees **only their own work**: their attendance, requests, mail, tasks and KPIs. One tap to ask for leave, and a side panel to reach the manager or ask Sanad for help.
+
+<p align="center">
+<img src="assets/screens/phone-staff.png" width="24%" alt="Employee home">
+<img src="assets/screens/phone-leave.png" width="24%" alt="Leave request">
+<img src="assets/screens/phone-sanad.png" width="24%" alt="Talking to Sanad">
+<img src="assets/screens/phone-login.png" width="24%" alt="Sign in">
+</p>
+
+### Arabic first, English too
+The whole interface is right-to-left Arabic by default, and switches to English with one tap.
+
+<p align="center"><img src="assets/screens/home-en.png" width="49%" alt="English home"> <img src="assets/screens/requests-en.png" width="49%" alt="English requests"></p>
+
+## How it's built
+
+| Layer | Choice |
+|---|---|
+| Runtime | Cloudflare Workers (single worker, edge-deployed) |
+| Database | Cloudflare D1 (SQLite) with forward-only migrations |
+| Front end | Hand-written HTML/CSS/JS, no framework, IBM Plex Sans Arabic |
+| Assistant | Large language model with tool calling, scoped per role |
+| Mail | Microsoft Graph, Gmail API, Resend (outbound), Cloudflare Email Routing (inbound) |
+| Sign-in | Signed session cookies, per-employee codes, Microsoft / Google SSO |
+| Tests | 48 automated tests covering approvals, mail, SSO, attendance, KPIs and the demo |
+
+## Security
+
+- No keys or passwords in the front end or in this repository; all secrets live in the platform's secret store.
+- Employee codes and passwords are stored as HMAC hashes, never in plain text.
+- Mail OAuth tokens are encrypted at rest (AES-GCM).
+- Every API checks the role and the page owner before acting; employees can't see each other's data.
+- Demo sandboxes are rate-limited, can't send real email, and are wiped after 24 hours.
+
+## About
+
+Designed and built by **Reema Ghazi**, software engineering student at Gulf Colleges.
+
+This repository is a showcase. The source code is private.
