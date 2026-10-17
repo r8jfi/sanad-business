@@ -87,7 +87,7 @@ The whole interface is right-to-left Arabic by default, and switches to English 
 | Assistant | Large language model with tool calling, scoped per role |
 | Mail | Microsoft Graph, Gmail API, Resend (outbound), Cloudflare Email Routing (inbound) |
 | Sign-in | Signed session cookies, per-employee codes, Microsoft / Google SSO |
-| Tests | 48 automated tests covering approvals, mail, SSO, attendance, KPIs and the demo |
+| Tests | 50 automated tests covering approvals, mail, SSO, attendance, KPIs and the demo |
 
 ## Security
 
