@@ -77,6 +77,19 @@ The whole interface is right-to-left Arabic by default, and switches to English 
 
 <p align="center"><img src="assets/screens/home-en.png" width="49%" alt="English home"> <img src="assets/screens/requests-en.png" width="49%" alt="English requests"></p>
 
+## Payroll and HR operations
+
+- **Monthly payroll** with GOSI worked out per employee (Saudi and non-Saudi rates), advance instalments, unpaid leave deductions and absences flagged for review. Draft → approved → paid, and each employee gets their payslip.
+- **Mudad (WPS) and bank transfer files** ready to download once the run is approved.
+- **Resignations and offboarding:** Sanad checks the notice period, the end-of-service award, the leave balance owed, and any company custody that hasn't come back.
+- **Location check-in:** set the office location and radius; attendance shows who checked in on site and who didn't.
+- **Reports** for staff, attendance, leave, requests, documents and custody, exportable to Excel.
+- **Integrations page** showing what's connected: Microsoft 365, Google Workspace, Mudad, banks, GOSI, Excel and the Saudi voice.
+
+<p align="center"><img src="assets/screens/payroll.png" alt="Monthly payroll run"></p>
+<p align="center"><img src="assets/screens/resignation.png" width="49%" alt="Sanad's check on a resignation"> <img src="assets/screens/attendance-location.png" width="49%" alt="Attendance with office location"></p>
+<p align="center"><img src="assets/screens/phone-payslip.png" width="24%" alt="Employee payslip"> <img src="assets/screens/integrations.png" width="73%" alt="Integrations"></p>
+
 ## Security and compliance
 
 Built for what Saudi companies ask before they sign. Everything below is live in the demo.
@@ -103,7 +116,7 @@ Built for what Saudi companies ask before they sign. Everything below is live in
 | Assistant | Large language model with tool calling, scoped per role |
 | Mail | Microsoft Graph, Gmail API, Resend (outbound), Cloudflare Email Routing (inbound) |
 | Sign-in | Signed session cookies, per-employee codes, Microsoft / Google SSO |
-| Tests | 69 automated tests covering approvals, mail, SSO, attendance, KPIs and the demo |
+| Tests | 76 automated tests covering approvals, payroll, labour law, mail, SSO, attendance, security and the demo |
 
 ## Security in the code
 
