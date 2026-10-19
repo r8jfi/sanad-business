@@ -77,6 +77,22 @@ The whole interface is right-to-left Arabic by default, and switches to English 
 
 <p align="center"><img src="assets/screens/home-en.png" width="49%" alt="English home"> <img src="assets/screens/requests-en.png" width="49%" alt="English requests"></p>
 
+## Security and compliance
+
+Built for what Saudi companies ask before they sign. Everything below is live in the demo.
+
+- **Saudi labour law:** all statutory leave types, sick pay tiers (30 days full, 60 at 75%, 30 unpaid), 21 days of annual leave rising to 30 after five years, official holidays left out of leave days, Hijri dates on screens and letters, and the end-of-service award under articles 84 and 85.
+- **Employee files:** ID, iqama, passport, contract and insurance with expiry alerts 30 days ahead, plus company custody that has to come back before someone leaves.
+- **Two-step sign-in** with any authenticator app, on top of personal codes and Microsoft or Google single sign-on.
+- **Permissions by role:** manager, department head, HR, finance, IT, page owner and employee each see only what their role needs.
+- **Audit log** of every sign-in, decision and sensitive change, exportable as CSV.
+- **Your data, your call:** see where it's stored and who processes it, export everything in one file, delete the company account with a 7-day grace period, and switch the AI off for the whole company.
+- **Security testing:** a live security check in the app, and automated penetration tests (cross-company access, forged sessions, cross-site requests, brute force, two-step bypass and more) on every release.
+
+<p align="center"><img src="assets/screens/security.png" alt="Security and privacy page"></p>
+<p align="center"><img src="assets/screens/labour-check.png" width="49%" alt="Sanad's labour-law check on a sick leave"> <img src="assets/screens/employee-file.png" width="49%" alt="Employee file with documents and custody"></p>
+<p align="center"><img src="assets/screens/two-step.png" width="49%" alt="Two-step sign-in setup"> <img src="assets/screens/audit-log.png" width="49%" alt="Audit log"></p>
+
 ## How it's built
 
 | Layer | Choice |
@@ -87,9 +103,9 @@ The whole interface is right-to-left Arabic by default, and switches to English 
 | Assistant | Large language model with tool calling, scoped per role |
 | Mail | Microsoft Graph, Gmail API, Resend (outbound), Cloudflare Email Routing (inbound) |
 | Sign-in | Signed session cookies, per-employee codes, Microsoft / Google SSO |
-| Tests | 50 automated tests covering approvals, mail, SSO, attendance, KPIs and the demo |
+| Tests | 69 automated tests covering approvals, mail, SSO, attendance, KPIs and the demo |
 
-## Security
+## Security in the code
 
 - No keys or passwords in the front end or in this repository; all secrets live in the platform's secret store.
 - Employee codes and passwords are stored as HMAC hashes, never in plain text.
