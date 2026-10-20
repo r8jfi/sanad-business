@@ -116,7 +116,7 @@ Built for what Saudi companies ask before they sign. Everything below is live in
 | Assistant | Large language model with tool calling, scoped per role |
 | Mail | Microsoft Graph, Gmail API, Resend (outbound), Cloudflare Email Routing (inbound) |
 | Sign-in | Signed session cookies, per-employee codes, Microsoft / Google SSO |
-| Tests | 76 automated tests covering approvals, payroll, labour law, mail, SSO, attendance, security and the demo |
+| Tests | 77 automated tests covering approvals, payroll, labour law, mail, SSO, attendance, security and the demo |
 
 ## Security in the code
 
