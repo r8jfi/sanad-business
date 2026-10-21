@@ -128,6 +128,6 @@ Built for what Saudi companies ask before they sign. Everything below is live in
 
 ## About
 
-Designed and built by **Reema Ghazi**, software engineering student at Gulf Colleges.
+Designed and built by **Reema Ghazi**, software engineering student .
 
 This repository is a showcase. The source code is private.
